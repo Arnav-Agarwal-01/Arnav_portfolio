@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { BgComponent } from "@/components/ui/bgcomponent";
 import { ThemeProvider } from "next-themes";
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,27 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <div className="min-h-screen w-full bg-black relative">
-            {/* Dark Noise Colored Background */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 z-0 pointer-events-none"
-              style={{
-                background: "#000000",
-                backgroundImage: `
-                  radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.2) 1px, transparent 0),
-                  radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.18) 1px, transparent 0),
-                  radial-gradient(circle at 1px 1px, rgba(236, 72, 153, 0.15) 1px, transparent 0)
-                `,
-                backgroundSize: "20px 20px, 30px 30px, 25px 25px",
-                backgroundPosition: "0 0, 10px 10px, 15px 5px",
-              }}
-            />
-            {/* Your Content/Components */}
-            <main className="relative z-10">
-              {children}
-            </main>
-          </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>
