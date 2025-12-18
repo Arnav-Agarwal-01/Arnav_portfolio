@@ -2,16 +2,16 @@ import React from 'react';
 
 export default function Background({ children, className = "" }) {
   return (
-    <div className={`min-h-screen w-full bg-black relative overflow-hidden ${className}`}>
+    <div className={`min-h-screen w-full bg-[#fafaf8] relative overflow-hidden ${className}`}>
       {/* Subtle grid lines */}
       <div
-        className="absolute inset-0 z-0 opacity-10"
+        className="absolute inset-0 z-0 opacity-5"
         style={{
           backgroundImage: `
-            linear-gradient(white 1px, transparent 1px),
-            linear-gradient(90deg, white 1px, transparent 1px)
+            linear-gradient(#999 1px, transparent 1px),
+            linear-gradient(90deg, #999 1px, transparent 1px)
           `,
-          backgroundSize: '80px 120px',
+          backgroundSize: '120px 120px',
         }}
       />
       {/* Content */}
