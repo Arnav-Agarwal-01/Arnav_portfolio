@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import StickyFooter from "@/components/sticky-footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,7 +23,10 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="">
-          {children}
+          <div className="relative z-10 bg-background w-full shadow-lg">
+            {children}
+          </div>
+          <StickyFooter />
         </ThemeProvider>
       </body>
     </html>
