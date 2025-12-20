@@ -42,6 +42,9 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
+  --background-end-rgb: var(----background-end-rgb);
+  --background-start-rgb: var(----background-start-rgb);
+  --foreground-rgb: var(----foreground-rgb);
   @keyframes pulse-slow {
   0%, 100% {
     transform: translateX(-100%);
@@ -85,6 +88,9 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 .dark {

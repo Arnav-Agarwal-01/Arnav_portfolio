@@ -14,8 +14,6 @@ import QuickStats from "@/components/quick-stats";
 export default function Home() {
   return (
     <Background>
-      <FloatingShapes />
-      <DecorativeElements />
       <CursorEffect />
       <AnimatedNavFramer/>
       <div className="ml-[2rem] mt-[22rem] md:ml-[4rem] md:mt-[18rem] lg:ml-[6rem] lg:mt-[22rem] mb-32 flex flex-col items-start">
