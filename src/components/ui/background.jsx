@@ -5,7 +5,7 @@ export default function Background({ children, className = "" }) {
     <div className={`min-h-screen w-full bg-[#fafaf8] relative overflow-hidden ${className}`}>
       {/* Subtle grid lines */}
       <div
-        className="absolute inset-0 z-0 opacity-5"
+        className="absolute inset-0 z-0 opacity-20"
         style={{
           backgroundImage: `
             linear-gradient(#999 1px, transparent 1px),

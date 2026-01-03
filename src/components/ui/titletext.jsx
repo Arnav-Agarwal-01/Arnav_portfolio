@@ -5,7 +5,7 @@ import { Outfit } from "next/font/google";
 import { VariableFontHoverByRandomLetter } from "@/components/ui/variable-font-hover-by-random-letter"
 
 
-const outfit = Outfit({ 
+const outfit = Outfit({
   subsets: ["latin"]
 });
 
@@ -62,13 +62,13 @@ function Preview({ photoSrc = "/profile.jpg", photoSize = 280 }) {
       ) : null}
 
       <div className="flex items-start justify-start" onMouseEnter={onEnter} onMouseLeave={onLeave} onMouseMove={onMove}>
-          <VariableFontHoverByRandomLetter
-            label="ARNAV AGARWAL"
-            staggerDuration={0.03}
-            className={`flex justify-start cursor-pointer align-text-top ${outfit.className} text-[2rem] sm:text-[2rem] md:text-[6rem] lg:text-[9rem]`}
-            fromFontVariationSettings="'wght' 400, 'slnt' 0"
-            toFontVariationSettings="'wght' 900, 'slnt' 0"
-          />
+        <VariableFontHoverByRandomLetter
+          label="ARNAV AGARWAL"
+          staggerDuration={0.03}
+          className={`flex justify-start cursor-pointer align-text-top ${outfit.className} text-[2rem] sm:text-[2rem] md:text-[6rem] lg:text-[9rem]`}
+          fromFontVariationSettings="'wght' 400, 'slnt' 0"
+          toFontVariationSettings="'wght' 900, 'slnt' 0"
+        />
       </div>
     </div>
   )
