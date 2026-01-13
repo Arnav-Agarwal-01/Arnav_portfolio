@@ -65,7 +65,7 @@ function Preview({ photoSrc = "/profile.jpg", photoSize = 280 }) {
         <VariableFontHoverByRandomLetter
           label="ARNAV AGARWAL"
           staggerDuration={0.03}
-          className={`flex justify-start cursor-pointer align-text-top ${outfit.className} text-[2rem] sm:text-[2rem] md:text-[6rem] lg:text-[9rem]`}
+          className={`flex justify-start cursor-pointer align-text-top md:-translate-y-38 md:translate-x-5 ${outfit.className} text-[2rem] sm:text-[2rem] md:text-[6rem] lg:text-[9rem]`}
           fromFontVariationSettings="'wght' 400, 'slnt' 0"
           toFontVariationSettings="'wght' 900, 'slnt' 0"
         />

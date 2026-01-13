@@ -12,7 +12,7 @@ const socialLinks = [
 export default function SocialLinks() {
   return (
     <motion.div
-      className="flex gap-4 mt-8 justify-start"
+      className="flex gap-4 mt-8 justify-start md:-translate-y-45 md:translate-x-5"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.8, duration: 0.6 }}

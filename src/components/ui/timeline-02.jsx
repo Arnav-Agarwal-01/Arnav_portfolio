@@ -9,30 +9,21 @@ const experiences = [
     role: "Software Development Intern",
     period: "7 Apr 2025 – 31 May 2025",
     highlights: [
-      "Assisted in building internal tooling and small features in collaboration with the team.",
-      "Helped automate parts of the workflow; wrote clean, maintainable code.",
-      "Learned fast in a production environment and shipped on time.",
+      "Engineered intelligent workflow solutions using Salesforce Agentforce AI Agents and Data Cloud, increasing partner workflow efficiency by up to 65%.",
+      "Optimized the Quarter-End Incentive Validation workflow, reducing manual effort by 75% (160+ hours a quarter to under 40 hours a quarter), delivering 480+ hours in annual savings.",
+      "Supported architectural evaluations comparing API-based systems with MCP server–based event-driven architectures, identifying potential for up to 40% lower workflow latency.",
     ],
     imageSrc: "/Salesforcepic.jpeg",
   },
   {
-    company: "Company Two",
-    role: "Role Title",
+    company: "Public Relations Team, KMIT",
+    role: "Developer",
     period: "2024 – 2025",
     highlights: [
-      "Short bullet about your impact.",
-      "Another bullet with a measurable outcome if possible.",
+      "Developed scalable backend and frontend for the KMIT Public Relations website, handling 8,000+ visitors and 45,000+ total page views in one month, supporting 4,000+ concurrent users for pass bookings and event management.",
+      "Created a mobile app for passes scanning and use authentication, reducing fake entries by 80% and was used concurrently by 20+ teams.",
     ],
-    imageSrc: "/experience/company-two.jpg",
-  },
-  {
-    company: "Company Three",
-    role: "Role Title",
-    period: "2023 – 2024",
-    highlights: [
-      "Describe a key project or responsibility.",
-    ],
-    imageSrc: "/experience/company-three.jpg",
+    imageSrc: "prwebsite.jpeg",
   },
 ];
 
