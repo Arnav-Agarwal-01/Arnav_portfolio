@@ -11,6 +11,7 @@ import SocialLinks from "@/components/social-links";
 import DecorativeElements from "@/components/decorative-elements";
 import QuickStats from "@/components/quick-stats";
 import ProjectsHorizontal from "@/components/ui/projects-horizontal";
+import CodingFootprint from "@/components/coding-footprint";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <SocialLinks />
       </div>
       <Timeline_02 />
+      <CodingFootprint />
       <ProjectsHorizontal />
     </Background>
 
