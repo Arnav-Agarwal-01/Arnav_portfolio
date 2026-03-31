@@ -47,6 +47,10 @@ const VariableFontHoverByRandomLetter = ({
     }),
   }
 
+  // Split label into words for word-level wrapping
+  const words = label.split(" ")
+  let charIndex = 0
+
   return (
     <motion.span
       className={`${className}`}
@@ -55,18 +59,41 @@ const VariableFontHoverByRandomLetter = ({
       initial="initial"
       {...props}>
       <span className="sr-only">{label}</span>
-      {label.split("").map((letter, i) => {
-        const index = shuffledIndices[i]
+      {words.map((word, wordIdx) => {
+        const wordChars = word.split("").map((letter, letterIdx) => {
+          const globalIdx = charIndex++
+          const index = shuffledIndices[globalIdx]
+          return (
+            <motion.span
+              key={globalIdx}
+              className="inline-block"
+              aria-hidden="true"
+              variants={letterVariants}
+              custom={index}>
+              {letter}
+            </motion.span>
+          )
+        })
+        // Add space between words (count it as a character for stagger)
+        if (wordIdx < words.length - 1) {
+          const spaceIdx = charIndex++
+          const spaceIndex = shuffledIndices[spaceIdx]
+          wordChars.push(
+            <motion.span
+              key={`space-${spaceIdx}`}
+              className="inline-block"
+              aria-hidden="true"
+              variants={letterVariants}
+              custom={spaceIndex}>
+              {"\u00A0"}
+            </motion.span>
+          )
+        }
         return (
-          <motion.span
-            key={i}
-            className="inline-block whitespace-pre"
-            aria-hidden="true"
-            variants={letterVariants}
-            custom={index}>
-            {letter}
-          </motion.span>
-        );
+          <span key={wordIdx} className="inline-flex whitespace-nowrap">
+            {wordChars}
+          </span>
+        )
       })}
     </motion.span>
   );
