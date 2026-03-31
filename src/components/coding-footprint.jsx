@@ -12,7 +12,7 @@ const leetcodeHeatmapUrl = `https://leetcard.jacoblin.cool/${encodeURIComponent(
 export default function CodingFootprint() {
   return (
     <section id="coding-footprint" className="bg-background py-20 md:py-24">
-      <div className="mx-4 md:ml-[4rem] md:mr-8 lg:ml-[6rem]">
+      <div className="mx-4 md:ml-[4rem] md:mr-8 lg:ml-[6rem] overflow-hidden">
         <div className="mb-10 md:mb-12">
           <p className="text-xs uppercase tracking-[0.26em] text-black/50">Profiles</p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-black md:text-5xl">Coding Footprint</h2>

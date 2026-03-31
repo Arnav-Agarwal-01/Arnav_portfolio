@@ -102,7 +102,7 @@ const projects = [
 
 function ProjectCard({ project, index }) {
     return (
-        <Card className="group relative flex h-[420px] w-[86vw] shrink-0 flex-col overflow-hidden rounded-[2rem] border border-black/10 bg-[#f4ede3] text-black shadow-[0_18px_60px_rgba(0,0,0,0.08)] md:h-[450px] md:w-[560px] lg:w-[620px]">
+        <Card className="group relative flex h-auto min-h-[380px] w-[85vw] shrink-0 flex-col overflow-hidden rounded-[1.5rem] md:rounded-[2rem] border border-black/10 bg-[#f4ede3] text-black shadow-[0_18px_60px_rgba(0,0,0,0.08)] md:min-h-[450px] md:w-[560px] lg:w-[620px]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,0,0,0.06),transparent_38%)]" />
             <div className="absolute -right-8 top-2 text-[112px] font-semibold tracking-[-0.08em] text-black/[0.05] md:text-[150px]">
                 {String(index + 1).padStart(2, "0")}
@@ -258,7 +258,7 @@ export default function ProjectsHorizontal() {
                 <div className="mb-10 flex items-end justify-between gap-8 md:mb-12">
                     <div className="max-w-3xl">
                         <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.32em] text-black/45">Selected Projects</p>
-                        <h1 className="max-w-[12ch] text-4xl font-semibold leading-[0.92] tracking-[-0.06em] text-black md:text-6xl">
+                        <h1 className="max-w-[12ch] text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold leading-[0.92] tracking-[-0.06em] text-black">
                             A horizontal reel of products I have built.
                         </h1>
                     </div>

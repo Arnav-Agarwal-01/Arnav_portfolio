@@ -21,16 +21,16 @@ export default function StickyFooter() {
 
     return (
         <div
-            className="relative h-[400px] md:h-[500px] w-full"
+            className="relative h-[500px] sm:h-[450px] md:h-[500px] w-full"
             style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
         >
-            <div className="fixed bottom-0 h-[400px] md:h-[500px] w-full -z-10 bg-neutral-950 text-white border-t border-neutral-800">
+            <div className="fixed bottom-0 h-[500px] sm:h-[450px] md:h-[500px] w-full -z-10 bg-neutral-950 text-white border-t border-neutral-800">
                 <div className="container mx-auto px-6 h-full flex flex-col justify-between py-12 md:py-16">
 
                     {/* Top Section */}
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
                         <div className="max-w-xl">
-                            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent">
+                            <h2 className="text-2xl sm:text-3xl md:text-6xl font-bold tracking-tighter mb-4 md:mb-6 bg-gradient-to-r from-white to-neutral-500 bg-clip-text text-transparent">
                                 Let's build something <br /> amazing together.
                             </h2>
                             <p className="text-neutral-400 text-lg md:text-xl font-light">
@@ -56,7 +56,7 @@ export default function StickyFooter() {
                     {/* Bottom Section */}
                     <div className="flex flex-col md:flex-row justify-between items-end md:items-center pt-8 border-t border-white/10 mt-auto">
                         <div className="flex flex-col gap-2">
-                            <span className="text-[120px] md:text-[180px] leading-none font-bold tracking-tighter text-white/5 select-none pointer-events-none absolute bottom-0 left-0 -z-10 translate-y-[20%]">
+                            <span className="text-[60px] sm:text-[90px] md:text-[120px] lg:text-[180px] leading-none font-bold tracking-tighter text-white/5 select-none pointer-events-none absolute bottom-0 left-0 -z-10 translate-y-[20%]">
                                 ARNAV
                             </span>
                             <div className="text-sm text-neutral-500">

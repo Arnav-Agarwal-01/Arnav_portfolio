@@ -70,7 +70,14 @@ const collapsedIconVariants = {
 }
 
 export function AnimatedNavFramer() {
-  const [isExpanded, setExpanded] = React.useState(true);
+  const [isExpanded, setExpanded] = React.useState(false);
+
+  // Expand by default on md+ screens
+  React.useEffect(() => {
+    if (window.innerWidth >= 768) {
+      setExpanded(true);
+    }
+  }, []);
   
   const { scrollY } = useScroll();
   const lastScrollY = React.useRef(0);

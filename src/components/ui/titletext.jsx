@@ -61,11 +61,11 @@ function Preview({ photoSrc = "/profile.jpg", photoSize = 280 }) {
         </div>
       ) : null}
 
-      <div className="flex items-start justify-start" onMouseEnter={onEnter} onMouseLeave={onLeave} onMouseMove={onMove}>
+      <div className="flex items-start justify-start w-full" onMouseEnter={onEnter} onMouseLeave={onLeave} onMouseMove={onMove}>
         <VariableFontHoverByRandomLetter
           label="ARNAV AGARWAL"
           staggerDuration={0.03}
-          className={`flex justify-start cursor-pointer align-text-top md:-translate-y-38 md:translate-x-5 ${outfit.className} text-[2rem] sm:text-[2rem] md:text-[6rem] lg:text-[9rem]`}
+          className={`flex flex-wrap justify-start cursor-pointer align-text-top ${outfit.className} text-[2rem] sm:text-[2.5rem] md:text-[6rem] lg:text-[9rem]`}
           fromFontVariationSettings="'wght' 400, 'slnt' 0"
           toFontVariationSettings="'wght' 900, 'slnt' 0"
         />
