@@ -191,60 +191,76 @@ function ProjectCard({ project, index }) {
 }
 
 export default function ProjectsHorizontal() {
-    const triggerRef = useRef(null);
-    const containerRef = useRef(null);
+    const sectionRef = useRef(null);
+    const stickyRef = useRef(null);
     const trackRef = useRef(null);
 
     useLayoutEffect(() => {
-        const trigger = triggerRef.current;
-        const container = containerRef.current;
+        const section = sectionRef.current;
+        const sticky = stickyRef.current;
         const track = trackRef.current;
 
-        if (!trigger || !container || !track) {
-            return undefined;
-        }
+        if (!section || !sticky || !track) return undefined;
 
         const ctx = gsap.context(() => {
-            const getDistance = () => Math.max(track.scrollWidth - container.clientWidth, 0);
+            const getDistance = () =>
+                Math.max(track.scrollWidth - sticky.clientWidth, 0);
 
-            const tween = gsap.to(track, {
+            // Set section height = 100vh + horizontal scroll distance
+            const setHeight = () => {
+                const d = getDistance();
+                section.style.height = `${window.innerHeight + d}px`;
+            };
+
+            setHeight();
+
+            gsap.to(track, {
                 x: () => -getDistance(),
                 ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: () => `+=${getDistance()}`,
+                    scrub: 0.6,
+                    invalidateOnRefresh: true,
+                    onRefresh: setHeight,
+                },
             });
 
-            ScrollTrigger.create({
-                trigger: trigger,
-                start: "top top",
-                end: () => `+=${getDistance()}`,
-                animation: tween,
-                pin: true,
-                pinSpacing: true,
-                scrub: 0.6,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-            });
-        }, trigger);
+            // Recalculate on resize
+            const onResize = () => {
+                setHeight();
+                ScrollTrigger.refresh();
+            };
+            window.addEventListener("resize", onResize);
+
+            return () => window.removeEventListener("resize", onResize);
+        }, section);
 
         return () => {
+            section.style.height = "";
             ctx.revert();
         };
     }, []);
 
     return (
         <section
-            ref={triggerRef}
+            ref={sectionRef}
             id="projects"
-            className="relative bg-background"
-            style={{ isolation: "isolate" }}
+            className="relative"
+            style={{ backgroundColor: "#fafaf8" }}
         >
+            {/* Sticky container – locks to viewport while we scroll through the section */}
             <div
-                ref={containerRef}
-                className="mx-auto flex h-screen max-w-[1500px] flex-col justify-center px-5 md:px-10 lg:px-14"
+                ref={stickyRef}
+                className="sticky top-0 mx-auto flex h-screen max-w-[1500px] flex-col justify-center overflow-hidden px-5 md:px-10 lg:px-14"
             >
                 <div className="mb-10 flex items-end justify-between gap-8 md:mb-12">
                     <div className="max-w-3xl">
-                        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.32em] text-black/45">Selected Projects</p>
-                        <h1 className="max-w-[12ch] text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold leading-[0.92] tracking-[-0.06em] text-black">
+                        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.32em] text-black/45">
+                            Selected Projects
+                        </p>
+                        <h1 className="max-w-[12ch] text-2xl font-semibold leading-[0.92] tracking-[-0.06em] text-black sm:text-3xl md:text-4xl lg:text-6xl">
                             A horizontal reel of products I have built.
                         </h1>
                     </div>
@@ -254,9 +270,16 @@ export default function ProjectsHorizontal() {
                 </div>
 
                 <div className="overflow-hidden">
-                    <div ref={trackRef} className="flex gap-5 will-change-transform md:gap-7">
+                    <div
+                        ref={trackRef}
+                        className="flex gap-5 will-change-transform md:gap-7"
+                    >
                         {projects.map((project, index) => (
-                            <ProjectCard key={project.title} project={project} index={index} />
+                            <ProjectCard
+                                key={project.title}
+                                project={project}
+                                index={index}
+                            />
                         ))}
                     </div>
                 </div>
