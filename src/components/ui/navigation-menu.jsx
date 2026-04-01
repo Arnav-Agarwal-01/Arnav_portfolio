@@ -7,10 +7,10 @@ import { Navigation, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Services", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "Home", href: "#hero" },
+  { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "mailto:arnav22agarwal@gmail.com" },
 ];
 
 const EXPAND_SCROLL_THRESHOLD = 80;
@@ -136,7 +136,18 @@ export function AnimatedNavFramer() {
               key={item.name}
               href={item.href}
               variants={itemVariants}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (item.href.startsWith("#")) {
+                  e.preventDefault();
+                  const target = document.querySelector(item.href);
+                  if (target) {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                  } else if (item.href === "#hero") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                }
+              }}
               className="text-base font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-2">
               {item.name}
             </motion.a>

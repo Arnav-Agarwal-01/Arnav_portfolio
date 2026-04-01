@@ -19,7 +19,7 @@ export default function Home() {
     <Background>
       <CursorEffect />
       <AnimatedNavFramer />
-      <div className="px-4 sm:px-6 md:px-0 md:ml-[4rem] lg:ml-[6rem] mt-[10rem] sm:mt-[14rem] md:mt-[18rem] lg:mt-[22rem] mb-16 md:mb-32 flex flex-col items-start">
+      <div id="hero" className="px-4 sm:px-6 md:px-0 md:ml-[4rem] lg:ml-[6rem] mt-[10rem] sm:mt-[14rem] md:mt-[18rem] lg:mt-[22rem] mb-16 md:mb-32 flex flex-col items-start">
         <Preview photoSize={320} />
         <RoleTagline />
         <Introtext className="mt-6 sm:mt-8" />
