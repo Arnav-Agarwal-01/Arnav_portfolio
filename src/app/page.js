@@ -15,6 +15,7 @@ import CodingFootprint from "@/components/coding-footprint";
 
 export default function Home() {
   return (
+    <>
     <Background>
       <CursorEffect />
       <AnimatedNavFramer />
@@ -26,8 +27,8 @@ export default function Home() {
       </div>
       <Timeline_02 />
       <CodingFootprint />
-      <ProjectsHorizontal />
     </Background>
-
+    <ProjectsHorizontal />
+    </>
   );
 }

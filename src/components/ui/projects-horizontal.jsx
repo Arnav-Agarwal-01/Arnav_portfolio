@@ -191,70 +191,56 @@ function ProjectCard({ project, index }) {
 }
 
 export default function ProjectsHorizontal() {
-    const sectionRef = useRef(null);
-    const frameRef = useRef(null);
-    const viewportRef = useRef(null);
+    const triggerRef = useRef(null);
+    const containerRef = useRef(null);
     const trackRef = useRef(null);
 
     useLayoutEffect(() => {
-        const section = sectionRef.current;
-        const frame = frameRef.current;
-        const viewport = viewportRef.current;
+        const trigger = triggerRef.current;
+        const container = containerRef.current;
         const track = trackRef.current;
 
-        if (!section || !frame || !viewport || !track) {
+        if (!trigger || !container || !track) {
             return undefined;
         }
 
-        const getDistance = () => Math.max(track.scrollWidth - viewport.clientWidth, 0);
-
-        const updateSectionHeight = () => {
-            section.style.height = `${frame.offsetHeight + getDistance()}px`;
-        };
-
         const ctx = gsap.context(() => {
-            updateSectionHeight();
-            gsap.set(track, { x: 0 });
+            const getDistance = () => Math.max(track.scrollWidth - container.clientWidth, 0);
 
             const tween = gsap.to(track, {
                 x: () => -getDistance(),
                 ease: "none",
-                paused: true,
             });
 
             ScrollTrigger.create({
-                trigger: section,
+                trigger: trigger,
                 start: "top top",
                 end: () => `+=${getDistance()}`,
                 animation: tween,
-                pin: frame,
-                pinSpacing: false,
-                scrub: 0.85,
+                pin: true,
+                pinSpacing: true,
+                scrub: 0.6,
                 anticipatePin: 1,
                 invalidateOnRefresh: true,
-                onRefreshInit: updateSectionHeight,
-                onRefresh: updateSectionHeight,
             });
-        }, section);
-
-        const handleResize = () => {
-            updateSectionHeight();
-            ScrollTrigger.refresh();
-        };
-
-        window.addEventListener("resize", handleResize);
-        ScrollTrigger.refresh();
+        }, trigger);
 
         return () => {
-            window.removeEventListener("resize", handleResize);
-            section.style.height = "";
             ctx.revert();
         };
     }, []);
 
     return (
-        <section ref={sectionRef} id="projects" className="relative bg-background">
-            <div ref={frameRef} className="mx-auto flex h-screen max-w-[1500px] flex-col justify-center px-5 py-14 md:px-10 md:py-16 lg:px-14">
+        <section
+            ref={triggerRef}
+            id="projects"
+            className="relative bg-background"
+            style={{ isolation: "isolate" }}
+        >
+            <div
+                ref={containerRef}
+                className="mx-auto flex h-screen max-w-[1500px] flex-col justify-center px-5 md:px-10 lg:px-14"
+            >
                 <div className="mb-10 flex items-end justify-between gap-8 md:mb-12">
                     <div className="max-w-3xl">
                         <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.32em] text-black/45">Selected Projects</p>
@@ -263,11 +249,11 @@ export default function ProjectsHorizontal() {
                         </h1>
                     </div>
                     <p className="hidden max-w-sm text-sm leading-7 text-black/55 lg:block">
-                        GSAP drives the horizontal motion while the frame stays locked for exactly the width of the cards.
+                        Scroll to browse through the projects. Each card highlights the stack, impact, and links.
                     </p>
                 </div>
 
-                <div ref={viewportRef} className="overflow-hidden">
+                <div className="overflow-hidden">
                     <div ref={trackRef} className="flex gap-5 will-change-transform md:gap-7">
                         {projects.map((project, index) => (
                             <ProjectCard key={project.title} project={project} index={index} />

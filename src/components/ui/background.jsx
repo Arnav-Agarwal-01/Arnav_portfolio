@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Background({ children, className = "" }) {
   return (
-    <div className={`min-h-screen w-full bg-[#fafaf8] relative overflow-hidden ${className}`}>
+    <div className={`min-h-screen w-full bg-[#fafaf8] relative overflow-x-clip ${className}`}>
       {/* Subtle grid lines */}
       <div
         className="absolute inset-0 z-0 opacity-20"
