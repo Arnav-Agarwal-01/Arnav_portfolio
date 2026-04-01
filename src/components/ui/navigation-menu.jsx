@@ -10,7 +10,7 @@ const navItems = [
   { name: "Home", href: "#hero" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "mailto:arnav22agarwal@gmail.com" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const EXPAND_SCROLL_THRESHOLD = 80;

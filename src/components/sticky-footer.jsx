@@ -16,7 +16,7 @@ export default function StickyFooter() {
         { label: "Home", href: "#hero" },
         { label: "Experience", href: "#experience" },
         { label: "Projects", href: "#projects" },
-        { label: "Contact", href: "mailto:arnav22agarwal@gmail.com" },
+        { label: "Contact", href: "#contact" },
     ];
 
     return (

@@ -12,6 +12,7 @@ import DecorativeElements from "@/components/decorative-elements";
 import QuickStats from "@/components/quick-stats";
 import ProjectsHorizontal from "@/components/ui/projects-horizontal";
 import CodingFootprint from "@/components/coding-footprint";
+import ContactSection from "@/components/contact-section";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <CodingFootprint />
     </Background>
     <ProjectsHorizontal />
+    <ContactSection />
     </>
   );
 }
