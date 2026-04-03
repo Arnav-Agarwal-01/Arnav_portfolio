@@ -93,7 +93,7 @@ export default function ContactSection() {
                             }}
                         >
                             {/* Icon */}
-                            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-[#fafaf8] transition-colors duration-300 group-hover:bg-black group-hover:text-white">
+                            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-background transition-colors duration-300 group-hover:bg-black group-hover:text-white">
                                 <link.icon className="h-5 w-5" />
                             </div>
 

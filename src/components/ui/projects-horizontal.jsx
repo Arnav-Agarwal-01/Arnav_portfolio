@@ -102,17 +102,17 @@ const projects = [
 
 function ProjectCard({ project, index }) {
     return (
-        <Card className="group relative flex h-auto min-h-[380px] w-[85vw] shrink-0 flex-col overflow-hidden rounded-[1.5rem] md:rounded-[2rem] border border-black/10 bg-[#f4ede3] text-black shadow-[0_18px_60px_rgba(0,0,0,0.08)] md:min-h-[450px] md:w-[560px] lg:w-[620px]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,0,0,0.06),transparent_38%)]" />
-            <div className="absolute -right-8 top-2 text-[112px] font-semibold tracking-[-0.08em] text-black/[0.05] md:text-[150px]">
+        <Card className="group relative flex h-auto min-h-[380px] w-[85vw] shrink-0 flex-col overflow-hidden rounded-[1.5rem] md:rounded-[2rem] border border-white/10 bg-zinc-900 text-zinc-50 shadow-[0_18px_60px_rgba(0,0,0,0.4)] md:min-h-[450px] md:w-[560px] lg:w-[620px]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_38%)]" />
+            <div className="absolute -right-8 top-2 text-[112px] font-semibold tracking-[-0.08em] text-white/[0.03] md:text-[150px]">
                 {String(index + 1).padStart(2, "0")}
             </div>
 
-            <CardHeader className="relative z-10 flex flex-row items-start justify-between gap-6 border-b border-black/10 pb-4">
+            <CardHeader className="relative z-10 flex flex-row items-start justify-between gap-6 border-b border-white/10 pb-4">
                 <div className="space-y-3">
-                    <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-black/55">
+                    <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-zinc-400">
                         <span>{project.time}</span>
-                        <span className="h-1 w-1 rounded-full bg-black/25" />
+                        <span className="h-1 w-1 rounded-full bg-white/20" />
                         <span>Featured build</span>
                     </div>
                     <h2 className="max-w-[12ch] text-3xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-5xl">
@@ -120,7 +120,7 @@ function ProjectCard({ project, index }) {
                     </h2>
                 </div>
 
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-black/10 bg-black text-white transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 hover:bg-zinc-200">
                     <ArrowUpRight className="h-4 w-4" />
                 </div>
             </CardHeader>
@@ -128,26 +128,26 @@ function ProjectCard({ project, index }) {
             <CardContent className="relative z-10 flex min-h-0 flex-1 flex-col justify-between gap-4 py-5">
                 <div className="grid min-h-0 grow gap-4 overflow-y-auto pr-2 md:grid-cols-[1.2fr_0.9fr] md:gap-6">
                     <div>
-                        <p className="text-[11px] uppercase tracking-[0.24em] text-black/45">Overview</p>
-                        <p className="mt-2 text-[15px] leading-7 text-black/72 md:text-base">
+                        <p className="text-[11px] uppercase tracking-[0.24em] text-zinc-500">Overview</p>
+                        <p className="mt-2 text-[15px] leading-7 text-zinc-300 md:text-base">
                             {project.description}
                         </p>
                     </div>
                     <div>
-                        <p className="text-[11px] uppercase tracking-[0.24em] text-black/45">Impact</p>
-                        <p className="mt-2 text-sm leading-7 text-black/68 md:text-[15px]">
+                        <p className="text-[11px] uppercase tracking-[0.24em] text-zinc-500">Impact</p>
+                        <p className="mt-2 text-sm leading-7 text-zinc-300 md:text-[15px]">
                             {project.outcome}
                         </p>
                     </div>
                 </div>
 
                 <div>
-                    <p className="text-[11px] uppercase tracking-[0.24em] text-black/45">Stack</p>
+                    <p className="text-[11px] uppercase tracking-[0.24em] text-zinc-500">Stack</p>
                     <div className="mt-2 flex flex-wrap gap-2.5">
                         {project.stack.map((tech) => (
                             <span
                                 key={tech}
-                                className="rounded-full border border-black/10 bg-white/70 px-3 py-1.5 text-sm font-medium text-black/72"
+                                className="rounded-full border border-white/10 bg-zinc-800 px-3 py-1.5 text-sm font-medium text-zinc-300"
                             >
                                 {tech}
                             </span>
@@ -156,12 +156,12 @@ function ProjectCard({ project, index }) {
                 </div>
             </CardContent>
 
-            <CardFooter className="relative z-10 mt-auto flex-wrap gap-3 border-t border-black/10 pt-4 md:flex-nowrap">
+            <CardFooter className="relative z-10 mt-auto flex-wrap gap-3 border-t border-white/10 pt-4 md:flex-nowrap">
                 {project.github ? (
                     <Button
                         variant="outline"
                         size="lg"
-                        className="h-11 rounded-full border-black/15 bg-transparent text-black hover:bg-black hover:text-white"
+                        className="h-11 rounded-full border-white/20 bg-transparent text-zinc-50 hover:bg-white hover:text-black"
                         asChild
                     >
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -169,19 +169,19 @@ function ProjectCard({ project, index }) {
                         </a>
                     </Button>
                 ) : (
-                    <span className="inline-flex h-11 items-center rounded-full border border-dashed border-black/15 px-5 text-sm font-medium text-black/40">
+                    <span className="inline-flex h-11 items-center rounded-full border border-dashed border-white/20 px-5 text-sm font-medium text-zinc-500">
                         Code private
                     </span>
                 )}
 
                 {project.live ? (
-                    <Button size="lg" className="h-11 rounded-full bg-black text-white hover:bg-black/85" asChild>
+                    <Button size="lg" className="h-11 rounded-full bg-white text-black hover:bg-zinc-200" asChild>
                         <a href={project.live} target="_blank" rel="noopener noreferrer">
                             <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                         </a>
                     </Button>
                 ) : (
-                    <span className="inline-flex h-11 items-center rounded-full bg-black px-5 text-sm font-medium text-white/88">
+                    <span className="inline-flex h-11 items-center rounded-full bg-zinc-800 px-5 text-sm font-medium text-zinc-400">
                         No public demo
                     </span>
                 )}
@@ -247,8 +247,7 @@ export default function ProjectsHorizontal() {
         <section
             ref={sectionRef}
             id="projects"
-            className="relative"
-            style={{ backgroundColor: "#fafaf8" }}
+            className="relative bg-zinc-950"
         >
             {/* Sticky container – locks to viewport while we scroll through the section */}
             <div
@@ -257,14 +256,14 @@ export default function ProjectsHorizontal() {
             >
                 <div className="mb-10 flex items-end justify-between gap-8 md:mb-12">
                     <div className="max-w-3xl">
-                        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.32em] text-black/45">
+                        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.32em] text-zinc-400">
                             Selected Projects
                         </p>
-                        <h1 className="max-w-[12ch] text-2xl font-semibold leading-[0.92] tracking-[-0.06em] text-black sm:text-3xl md:text-4xl lg:text-6xl">
+                        <h1 className="max-w-[12ch] text-2xl font-semibold leading-[0.92] tracking-[-0.06em] text-zinc-50 sm:text-3xl md:text-4xl lg:text-6xl">
                             A horizontal reel of products I have built.
                         </h1>
                     </div>
-                    <p className="hidden max-w-sm text-sm leading-7 text-black/55 lg:block">
+                    <p className="hidden max-w-sm text-sm leading-7 text-zinc-400 lg:block">
                         Scroll to browse through the projects. Each card highlights the stack, impact, and links.
                     </p>
                 </div>
