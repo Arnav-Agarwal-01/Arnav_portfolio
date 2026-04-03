@@ -10,6 +10,16 @@ import { Button } from "@/components/ui/button";
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
+    {title: "Scroll to view :) ",
+        time: "Completed",
+        description:
+            "Led development of a multi-agent legal AI system using HuggingFace, FAISS, Sentence-BERT, and 4-bit Mistral-7B RAG for fact extraction, retrieval, reasoning, and structured legal report generation over a 50k+ Indian legal corpus.",
+        outcome:
+            "Designed modular agents for classification, NER, question generation, retrieval, and reasoning, connected by a custom knowledge-graph memory to drive dynamic interviews and end-to-end legal analysis.",
+        stack: ["Python", "LangChain", "RAG", "AI", "ML", "FAISS", "Graph DB"],
+        github: "https://github.com/Arnav-Agarwal-01/ChatLawAI",
+        live: ""
+    },
     {
         title: "ChatLaw AI",
         time: "Completed",
