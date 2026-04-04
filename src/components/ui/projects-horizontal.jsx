@@ -27,7 +27,7 @@ const projects = [
             "Led development of a multi-agent legal AI system using HuggingFace, FAISS, Sentence-BERT, and 4-bit Mistral-7B RAG for fact extraction, retrieval, reasoning, and structured legal report generation over a 50k+ Indian legal corpus.",
         outcome:
             "Designed modular agents for classification, NER, question generation, retrieval, and reasoning, connected by a custom knowledge-graph memory to drive dynamic interviews and end-to-end legal analysis.",
-        stack: ["Python", "LangChain", "RAG", "AI", "ML", "FAISS", "Graph DB"],
+        stack: ["Python", "LangChain", "RAG", "AI", "ML", "FAISS", "Graph DB", "Knowledge graph" , "LLM" , "Agentic AI"],
         github: "https://github.com/Arnav-Agarwal-01/ChatLawAI",
         live: "",
     },
@@ -136,19 +136,11 @@ function ProjectCard({ project, index }) {
             </CardHeader>
 
             <CardContent className="relative z-10 flex min-h-0 flex-1 flex-col justify-between gap-4 py-5">
-                <div className="grid min-h-0 grow gap-4 overflow-y-auto pr-2 md:grid-cols-[1.2fr_0.9fr] md:gap-6">
-                    <div>
-                        <p className="text-[11px] uppercase tracking-[0.24em] text-zinc-500">Overview</p>
-                        <p className="mt-2 text-[15px] leading-7 text-zinc-300 md:text-base">
-                            {project.description}
-                        </p>
-                    </div>
-                    <div>
-                        <p className="text-[11px] uppercase tracking-[0.24em] text-zinc-500">Impact</p>
-                        <p className="mt-2 text-sm leading-7 text-zinc-300 md:text-[15px]">
-                            {project.outcome}
-                        </p>
-                    </div>
+                <div className="min-h-0 grow overflow-y-auto pr-2">
+                    <p className="text-[11px] uppercase tracking-[0.24em] text-zinc-500">Overview</p>
+                    <p className="mt-2 text-[15px] leading-7 text-zinc-300 md:text-base">
+                        {project.description}
+                    </p>
                 </div>
 
                 <div>
@@ -274,7 +266,7 @@ export default function ProjectsHorizontal() {
                         </h1>
                     </div>
                     <p className="hidden max-w-sm text-sm leading-7 text-zinc-400 lg:block">
-                        Scroll to browse through the projects. Each card highlights the stack, impact, and links.
+                        Scroll to browse through the projects. Each card highlights the project overview, stack, and links.
                     </p>
                 </div>
 
