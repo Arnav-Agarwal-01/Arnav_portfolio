@@ -262,7 +262,7 @@ export default function ProjectsHorizontal() {
                             Selected Projects
                         </p>
                         <h1 className="max-w-[12ch] text-2xl font-semibold leading-[0.92] tracking-[-0.06em] text-zinc-50 sm:text-3xl md:text-4xl lg:text-6xl">
-                            A horizontal reel of products I have built.
+                            Products i've built
                         </h1>
                     </div>
                     <p className="hidden max-w-sm text-sm leading-7 text-zinc-400 lg:block">
