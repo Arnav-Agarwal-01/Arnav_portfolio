@@ -10,87 +10,93 @@ import { Button } from "@/components/ui/button";
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-    {title: "Scroll to view :) ",
-        time: "Completed",
+    {
+        title: "Scroll to view :)",
+        time: "Start",
         description:
-            "Scroll to view my projects / products",
-        stack: [""],
+            "Scroll horizontally to explore my featured products, applications, and technical experiments.",
+        stack: ["Exploration", "Journey"],
     },
     {
         title: "ChatLaw AI",
         time: "Completed",
         description:
-            "Multi-Agentic (Mixture Of Experts (MOE)) Legal AI system which mirrors SOP's of real life law firms. Legal Assistant -> Legal Researcheer -> Senior Lawer -> Legal Writer. Used HuggingFace, Mixtral-7B, Knowledge graphs, reasoning and RAG. Designed modular agents for classification, NER, question generation, retrieval, and reasoning, connected by a custom knowledge-graph memory to drive dynamic interviews and end-to-end legal analysis.",
-        stack: ["Python", "LangChain", "RAG", "AI", "ML", "FAISS", "Graph DB", "Knowledge graph" , "LLM" , "Agentic AI" , "Mixture-Of-Experts"],
+            "A multi-agentic Mixture-of-Experts (MoE) Legal AI system mirroring the SOPs of real-world law firms. Orchestrates roles (Legal Assistant, Researcher, Senior Lawyer, Writer) using Mixtral-7B, knowledge graphs, and RAG. Modular agents are connected by a custom knowledge-graph memory to drive dynamic interviews and end-to-end legal analysis.",
+        stack: ["Python", "LangChain", "RAG", "FAISS", "Graph DB", "Agentic AI", "MoE", "LLMs"],
         github: "https://github.com/Arnav-Agarwal-01/ChatLawAI",
-        live: "",
-    },
-    {
-        title: "BlogGenie",
-        time: "Completed",
-        description:
-            "Built a full-stack blogging platform for creating, publishing, and managing blogs with integrated AI tools for content generation and enhancement. You can write blogs, get them analysed by AI , publish them, view your blogs, view others blogs, edit delete and write them with AI all in one platform.",
-        stack: ["React", "Node.js", "Express", "MongoDB", "AI Tools" , "API" , "OPENAI API" , "Gemini"],
-        github: "https://github.com/blog-genie/BlogGenie-ps-proj-",
-        live: "",
-    },
-    {
-        title: "Webby",
-        time: "July 2024 - Present",
-        description:
-            "Webby the web scraper. Created for personal use. This web scraper scrapes mutliple sites paralelly and extracts relevant information, cleans and displays them all at a glance and In one single click. This was made to solve a personal problem I was facing.",
-        stack: ["Python", "Selenium", "Beautiful Soup", "Web Scraping"],
-        github: "https://github.com/Arnav-Agarwal-01/Webby",
-        live: "",
-    },
-    {
-        title: "Asset Management System",
-        time: "Oct 2023 - Dec 2023",
-        description:
-            "Developed an internal system to manage organizational assets, allocation flows, and audit visibility across teams.",
-        stack: ["MERN STACK", "MongoDB", "React" , "NodeMailer" , "Express" , "JavaScript"],
-        github: "https://github.com/Arnav-Agarwal-01/AMS-1",
-        live: "",
-    },
-    {
-        title: "My Portfolio",
-        time: "Sep 2023",
-        description:
-            "Designed and built a personal portfolio to showcase my skills and projects. You're currently seeing it here :)",
-        stack: ["Next.js", "Tailwind", "GSAP" , "JavaScript"],
-        github: "https://github.com/Arnav-Agarwal-01/Arnav_portfolio",
-        live: "https://arnavagarwal.me",
-    },
-    {
-        title: "Alertify",
-        time: "Sep 2023",
-        description:
-            "This is something exciting in progress :) Wont reveal much here but check out for early access :)",
-        
-        stack: ["JavaScript", "CSS", "UI Design"],
-        github: "",
-        live: "https://alertify-navy.vercel.app",
-    },
-    {
-        title: "AruCode",
-        time: "Sep 2023",
-        description:
-            "In Progress : Replicating claude code , learning about tool calling , agentic infrastructure , llms and low level access. Hoping to release it soon",
-        outcome:
-            "Prioritized readable structure and fast navigation to keep the product useful rather than ornamental.",
-        stack: ["HTML", "SCSS", "JavaScript"],
-        github: "",
         live: "",
     },
     {
         title: "HolidayME",
         time: "Sep 2023",
         description:
-            "Helps you find the best vacation time provided you have limited leaves. Gets you a list of all the possible long weekends you can take off on based on your leaves and your country. Takes into account all the possibilities and gives you the best slots and windows for you to maximise your travel experience. Cached and optimised for a user-friendly and smooth experience.",
-        
-        stack: ["Caching", "System Design", "JavaScript" , "MERN STACK"],
+            "An optimization engine that identifies the best vacation windows based on your limited leave balance and location. It calculates all possibilities to recommend optimal slots that maximize your time off. Highly optimized with caching for a snappy user experience.",
+        stack: ["MERN Stack", "System Design", "Caching", "JavaScript"],
         github: "https://github.com/Arnav-Agarwal-01/HolidayMe",
         live: "https://vacamax.arnavagarwal.me",
+    },
+    {
+        title: "PRKMIT",
+        time: "Sep 2023",
+        description:
+            "Engineered the official digital presence for the Public Relations Team at KMIT. Built a scalable, optimized platform that successfully managed over 45,000 page visits and handled 8,000+ unique visitors with a seamless user experience.",
+        stack: ["Next.js", "React", "Node.js", "Express", "MongoDB", "Nodemailer"],
+        github: "",
+        live: "https://prkmit.in",
+    },
+    {
+        title: "Alertify",
+        time: "Sep 2023",
+        description:
+            "An exciting upcoming product centered on timely notifications and event-driven user flows. Keeping the intricate details beneath the surface for now—stay tuned for early access.",
+        stack: ["JavaScript", "CSS", "UI/UX Design"],
+        github: "",
+        live: "https://alertify-navy.vercel.app",
+    },
+    {
+        title: "Webby",
+        time: "July 2024 - Present",
+        description:
+            "A high-performance parallel web scraper built to automate extensive data extraction. It concurrently scrapes multiple target sites, sanitizes the data, and displays consolidated insights at a glance—turning a complex manual process into a single-click solution.",
+        stack: ["Python", "Selenium", "BeautifulSoup", "Web Scraping"],
+        github: "https://github.com/Arnav-Agarwal-01/Webby",
+        live: "",
+    },
+    {
+        title: "BlogGenie",
+        time: "Completed",
+        description:
+            "A comprehensive full-stack blogging platform integrated with AI tooling. Features an end-to-end workflow allowing users to draft, AI-analyze, and publish content seamlessly. Includes reading, editing, and dynamic AI-assisted writing.",
+        stack: ["React", "Node.js", "Express", "MongoDB", "OpenAI API", "Gemini API"],
+        github: "https://github.com/blog-genie/BlogGenie-ps-proj-",
+        live: "",
+    },
+    {
+        title: "My Portfolio",
+        time: "Sep 2023",
+        description:
+            "Designed and built a personal portfolio focused on expressive typography, clean motion, and strong content hierarchy to showcase my skills and projects. You're experiencing it right now! :)",
+        stack: ["Next.js", "Tailwind CSS", "GSAP", "Framer Motion"],
+        github: "https://github.com/Arnav-Agarwal-01/Arnav_portfolio",
+        live: "https://arnavagarwal.me",
+    },
+    {
+        title: "AruCode",
+        time: "Sep 2023",
+        description:
+            "Currently in progress. Replicating the functionality of Claude Code to deeply explore tool calling, agentic infrastructure, LLM orchestration, and low-level system access. Hoping to release it soon.",
+        stack: ["Agentic AI", "LLMs", "Tool Calling", "System Architecture"],
+        github: "",
+        live: "",
+    },
+    {
+        title: "Asset Management System",
+        time: "Oct 2023 - Dec 2023",
+        description:
+            "Developed an internal dashboard to streamline organizational asset management, tracking resource allocation workflows, and ensuring audit visibility across cross-functional teams.",
+        stack: ["MERN Stack", "MongoDB", "React", "Express", "Node.js"],
+        github: "https://github.com/Arnav-Agarwal-01/AMS-1",
+        live: "",
     },
 ];
 
