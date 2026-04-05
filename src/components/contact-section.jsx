@@ -30,18 +30,37 @@ const contactLinks = [
 
 export default function ContactSection() {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const [status, setStatus] = useState("idle");
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const subject = encodeURIComponent(`Hey Arnav! From ${form.name}`);
-        const body = encodeURIComponent(
-            `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
-        );
-        window.location.href = `mailto:arnav22agarwal@gmail.com?subject=${subject}&body=${body}`;
+        setStatus("loading");
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(form),
+            });
+
+            if (res.ok) {
+                setStatus("success");
+                setForm({ name: "", email: "", message: "" });
+                setTimeout(() => setStatus("idle"), 5000);
+            } else {
+                setStatus("error");
+                setTimeout(() => setStatus("idle"), 5000);
+            }
+        } catch (error) {
+            console.error("Error sending message:", error);
+            setStatus("error");
+            setTimeout(() => setStatus("idle"), 5000);
+        }
     };
 
     return (
@@ -213,10 +232,11 @@ export default function ContactSection() {
                         <div className="md:col-span-2">
                             <button
                                 type="submit"
-                                className="group inline-flex items-center gap-3 rounded-full bg-black px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-black/85 hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] active:scale-[0.98]"
+                                disabled={status === "loading"}
+                                className="group inline-flex items-center gap-3 rounded-full bg-black px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-black/85 hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none"
                             >
-                                Send Message
-                                <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                {status === "loading" ? "Sending..." : status === "success" ? "Message Sent!" : status === "error" ? "Error, please try again" : "Send Message"}
+                                {status === "idle" && <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />}
                             </button>
                         </div>
                     </form>

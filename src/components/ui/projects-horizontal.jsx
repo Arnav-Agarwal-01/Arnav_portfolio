@@ -13,21 +13,15 @@ const projects = [
     {title: "Scroll to view :) ",
         time: "Completed",
         description:
-            "Led development of a multi-agent legal AI system using HuggingFace, FAISS, Sentence-BERT, and 4-bit Mistral-7B RAG for fact extraction, retrieval, reasoning, and structured legal report generation over a 50k+ Indian legal corpus.",
-        outcome:
-            "Designed modular agents for classification, NER, question generation, retrieval, and reasoning, connected by a custom knowledge-graph memory to drive dynamic interviews and end-to-end legal analysis.",
-        stack: ["Python", "LangChain", "RAG", "AI", "ML", "FAISS", "Graph DB"],
-        github: "https://github.com/Arnav-Agarwal-01/ChatLawAI",
-        live: ""
+            "Scroll to view my projects / products",
+        stack: [""],
     },
     {
         title: "ChatLaw AI",
         time: "Completed",
         description:
-            "Led development of a multi-agent legal AI system using HuggingFace, FAISS, Sentence-BERT, and 4-bit Mistral-7B RAG for fact extraction, retrieval, reasoning, and structured legal report generation over a 50k+ Indian legal corpus.",
-        outcome:
-            "Designed modular agents for classification, NER, question generation, retrieval, and reasoning, connected by a custom knowledge-graph memory to drive dynamic interviews and end-to-end legal analysis.",
-        stack: ["Python", "LangChain", "RAG", "AI", "ML", "FAISS", "Graph DB", "Knowledge graph" , "LLM" , "Agentic AI"],
+            "Multi-Agentic (Mixture Of Experts (MOE)) Legal AI system which mirrors SOP's of real life law firms. Legal Assistant -> Legal Researcheer -> Senior Lawer -> Legal Writer. Used HuggingFace, Mixtral-7B, Knowledge graphs, reasoning and RAG. Designed modular agents for classification, NER, question generation, retrieval, and reasoning, connected by a custom knowledge-graph memory to drive dynamic interviews and end-to-end legal analysis.",
+        stack: ["Python", "LangChain", "RAG", "AI", "ML", "FAISS", "Graph DB", "Knowledge graph" , "LLM" , "Agentic AI" , "Mixture-Of-Experts"],
         github: "https://github.com/Arnav-Agarwal-01/ChatLawAI",
         live: "",
     },
@@ -35,10 +29,8 @@ const projects = [
         title: "BlogGenie",
         time: "Completed",
         description:
-            "Built a full-stack blogging platform for creating, publishing, and managing blogs with integrated AI tools for content generation and enhancement.",
-        outcome:
-            "Improved workflow speed and content quality by 30% through a robust MERN architecture with reliable AI-assisted publishing flows.",
-        stack: ["React", "Node.js", "Express", "PostgreSQL", "AI Tools"],
+            "Built a full-stack blogging platform for creating, publishing, and managing blogs with integrated AI tools for content generation and enhancement. You can write blogs, get them analysed by AI , publish them, view your blogs, view others blogs, edit delete and write them with AI all in one platform.",
+        stack: ["React", "Node.js", "Express", "MongoDB", "AI Tools" , "API" , "OPENAI API" , "Gemini"],
         github: "",
         live: "",
     },
@@ -46,10 +38,8 @@ const projects = [
         title: "Webby",
         time: "July 2024 - Present",
         description:
-            "Created an AI-powered content generation tool for marketers and creators focused on faster ideation and reusable campaign assets.",
-        outcome:
-            "Shaped the product around practical generation workflows, quick iteration, and cleaner authoring loops.",
-        stack: ["Python", "FastAPI", "OpenAI API", "React"],
+            "Webby the web scraper. Created for personal use. This web scraper scrapes mutliple sites paralelly and extracts relevant information, cleans and displays them all at a glance and In one single click. This was made to solve a personal problem I was facing.",
+        stack: ["Python", "Selenium", "Beautiful Soup", "Web Scraping"],
         github: "",
         live: "",
     },
