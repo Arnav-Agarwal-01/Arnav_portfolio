@@ -13,6 +13,7 @@ import QuickStats from "@/components/quick-stats";
 import ProjectsHorizontal from "@/components/ui/projects-horizontal";
 import CodingFootprint from "@/components/coding-footprint";
 import ContactSection from "@/components/contact-section";
+import SkillsSection from "@/components/skills-section";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <Timeline_02 />
       <CodingFootprint />
     </Background>
+    <SkillsSection />
     <ProjectsHorizontal />
     <ContactSection />
     </>

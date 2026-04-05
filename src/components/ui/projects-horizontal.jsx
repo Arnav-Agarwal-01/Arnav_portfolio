@@ -21,8 +21,8 @@ const projects = [
         title: "ChatLaw AI",
         time: "Completed",
         description:
-            "A multi-agentic Mixture-of-Experts (MoE) Legal AI system mirroring the SOPs of real-world law firms. Orchestrates roles (Legal Assistant, Researcher, Senior Lawyer, Writer) using Mixtral-7B, knowledge graphs, and RAG. Modular agents are connected by a custom knowledge-graph memory to drive dynamic interviews and end-to-end legal analysis.",
-        stack: ["Python", "LangChain", "RAG", "FAISS", "Graph DB", "Agentic AI", "MoE", "LLMs"],
+            "A multi-agentic Mixture-of-Experts (MoE) Legal AI system mirroring the SOPs of real-world law firms. Orchestrates roles (Classification, NER, Reasoning) using HuggingFace, Mistral-7B, and RAG. Modular agents connected by a custom knowledge-graph memory drive dynamic interviews over a 50k+ Indian legal corpus.",
+        stack: ["Python", "HuggingFace", "Mistral-7B", "LangChain", "RAG", "FAISS", "Agentic AI", "Graph DB"],
         github: "https://github.com/Arnav-Agarwal-01/ChatLawAI",
         live: "",
     },
@@ -30,8 +30,8 @@ const projects = [
         title: "HolidayME",
         time: "Sep 2023",
         description:
-            "An optimization engine that identifies the best vacation windows based on your limited leave balance and location. It calculates all possibilities to recommend optimal slots that maximize your time off. Highly optimized with caching for a snappy user experience.",
-        stack: ["MERN Stack", "System Design", "Caching", "JavaScript"],
+            "An optimization engine that identifies the best vacation windows based on limited leave balances and locations. Calculates exhaustive possibilities to recommend optimal slots that maximize time off. Highly optimized with caching for a snappy experience.",
+        stack: ["MERN Stack", "System Design", "Caching", "JavaScript", "Algorithms"],
         github: "https://github.com/Arnav-Agarwal-01/HolidayMe",
         live: "https://vacamax.arnavagarwal.me",
     },
@@ -39,8 +39,8 @@ const projects = [
         title: "PRKMIT",
         time: "Sep 2023",
         description:
-            "Engineered the official digital presence for the Public Relations Team at KMIT. Built a scalable, optimized platform that successfully managed over 45,000 page visits and handled 8,000+ unique visitors with a seamless user experience.",
-        stack: ["Next.js", "React", "Node.js", "Express", "MongoDB", "Nodemailer"],
+            "Engineered the official digital presence and scalable architecture for the Public Relations Team at KMIT. Successfully managed over 45,000 page views and 8,000+ visitors in a month, supporting 4,000+ concurrent users for event management.",
+        stack: ["Next.js", "React.js", "Node.js", "Express.js", "MongoDB", "System Design"],
         github: "",
         live: "https://prkmit.in",
     },
@@ -49,26 +49,38 @@ const projects = [
         time: "Sep 2023",
         description:
             "An exciting upcoming product centered on timely notifications and event-driven user flows. Keeping the intricate details beneath the surface for now—stay tuned for early access.",
-        stack: ["JavaScript", "CSS", "UI/UX Design"],
+        stack: ["JavaScript", "CSS", "UI/UX Design", "Event-Driven Arch"],
         github: "",
         live: "https://alertify-navy.vercel.app",
-    },
-    {
-        title: "Webby",
-        time: "July 2024 - Present",
-        description:
-            "A high-performance parallel web scraper built to automate extensive data extraction. It concurrently scrapes multiple target sites, sanitizes the data, and displays consolidated insights at a glance—turning a complex manual process into a single-click solution.",
-        stack: ["Python", "Selenium", "BeautifulSoup", "Web Scraping"],
-        github: "https://github.com/Arnav-Agarwal-01/Webby",
-        live: "",
     },
     {
         title: "BlogGenie",
         time: "Completed",
         description:
-            "A comprehensive full-stack blogging platform integrated with AI tooling. Features an end-to-end workflow allowing users to draft, AI-analyze, and publish content seamlessly. Includes reading, editing, and dynamic AI-assisted writing.",
-        stack: ["React", "Node.js", "Express", "MongoDB", "OpenAI API", "Gemini API"],
+            "A full-stack AI-integrated blogging platform enabling users to create, publish, and manage content seamlessly. Developed with a robust MERN architecture, it improves workflow efficiency, speed, and content quality by 30% through dynamic AI-assisted writing.",
+        stack: ["React.js", "Node.js", "Express.js", "MongoDB", "OpenAI API", "Gemini API"],
         github: "https://github.com/blog-genie/BlogGenie-ps-proj-",
+        live: "",
+    },
+    
+    
+    {
+        title: "Webby",
+        time: "July 2024 - Present",
+        description:
+            "A high-performance Python Selenium scraper automating extensive data extraction. It aggregates programming-contest data across 10+ platforms into a structured database, boosting productivity and reducing search time by 40% using site-specific extraction methods.",
+        stack: ["Python", "Selenium", "BeautifulSoup", "Web Scraping", "Data Extraction"],
+        github: "https://github.com/Arnav-Agarwal-01/Webby",
+        live: "",
+    },
+    
+    {
+        title: "AruCode",
+        time: "Sep 2023",
+        description:
+            "Replicating the functionality of Claude Code to deeply explore tool calling, agentic infrastructure, LLM orchestration, and low-level system access. Actively exploring integrations with the Model Context Protocol (MCP).",
+        stack: ["Agentic AI", "LLMs", "Tool Calling", "System Architecture", "MCP"],
+        github: "",
         live: "",
     },
     {
@@ -76,28 +88,27 @@ const projects = [
         time: "Sep 2023",
         description:
             "Designed and built a personal portfolio focused on expressive typography, clean motion, and strong content hierarchy to showcase my skills and projects. You're experiencing it right now! :)",
-        stack: ["Next.js", "Tailwind CSS", "GSAP", "Framer Motion"],
+        stack: ["Next.js", "Tailwind CSS", "GSAP", "Framer Motion", "UI/UX Design"],
         github: "https://github.com/Arnav-Agarwal-01/Arnav_portfolio",
         live: "https://arnavagarwal.me",
-    },
-    {
-        title: "AruCode",
-        time: "Sep 2023",
-        description:
-            "Currently in progress. Replicating the functionality of Claude Code to deeply explore tool calling, agentic infrastructure, LLM orchestration, and low-level system access. Hoping to release it soon.",
-        stack: ["Agentic AI", "LLMs", "Tool Calling", "System Architecture"],
-        github: "",
-        live: "",
     },
     {
         title: "Asset Management System",
         time: "Oct 2023 - Dec 2023",
         description:
             "Developed an internal dashboard to streamline organizational asset management, tracking resource allocation workflows, and ensuring audit visibility across cross-functional teams.",
-        stack: ["MERN Stack", "MongoDB", "React", "Express", "Node.js"],
+        stack: ["MERN Stack", "MongoDB", "React.js", "Express.js", "Node.js"],
         github: "https://github.com/Arnav-Agarwal-01/AMS-1",
         live: "",
     },
+    {
+        title: "Stay tuned for more interesting ones",
+        time: "End",
+        description:
+            "Scroll horizontally to explore my featured products, applications, and technical experiments.",
+        stack: ["Exploration", "Journey"],
+    },
+    
 ];
 
 function ProjectCard({ project, index }) {
@@ -134,7 +145,7 @@ function ProjectCard({ project, index }) {
                 </div>
 
                 <div>
-                    <p className="text-[11px] uppercase tracking-[0.24em] text-zinc-500">Stack</p>
+                    <p className="text-[11px] uppercase tracking-[0.24em] text-zinc-500">Tech Stack</p>
                     <div className="mt-2 flex flex-wrap gap-2.5">
                         {project.stack.map((tech) => (
                             <span
