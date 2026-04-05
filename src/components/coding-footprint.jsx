@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowUpRight, ExternalLink, Star, BookOpen, GitFork, Users } from "lucide-react";
 
 const githubUsername = "Arnav-Agarwal-01";
 const leetcodeUsername = "Arnav_Agarwal_01";
@@ -10,6 +11,36 @@ const githubHeatmapUrl = `https://ghchart.rshah.org/${encodeURIComponent(githubU
 const leetcodeHeatmapUrl = `https://leetcard.jacoblin.cool/${encodeURIComponent(leetcodeUsername)}?theme=light&ext=heatmap`;
 
 export default function CodingFootprint() {
+  const [stats, setStats] = useState({ stars: "-", repos: "-", forks: "-", followers: "-" });
+
+  useEffect(() => {
+    async function fetchStats() {
+      try {
+        const [userRes, reposRes] = await Promise.all([
+            fetch(`https://api.github.com/users/${githubUsername}`),
+            fetch(`https://api.github.com/users/${githubUsername}/repos?per_page=100`)
+        ]);
+        
+        const userData = await userRes.json();
+        const reposData = await reposRes.json();
+        
+        if (Array.isArray(reposData)) {
+            const totalStars = reposData.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+            const totalForks = reposData.reduce((acc, repo) => acc + repo.forks_count, 0);
+            setStats({
+                stars: totalStars,
+                repos: userData.public_repos || reposData.length,
+                forks: totalForks,
+                followers: userData.followers || 0
+            });
+        }
+      } catch (err) {
+        console.error("Failed to fetch GitHub stats", err);
+      }
+    }
+    fetchStats();
+  }, []);
+
   return (
     <section id="coding-footprint" className="bg-background py-20 md:py-24">
       <div className="mx-4 md:ml-[4rem] md:mr-8 lg:ml-[6rem] overflow-hidden">
@@ -34,11 +65,32 @@ export default function CodingFootprint() {
                 View GitHub <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
-            <div className="overflow-x-auto rounded-xl border border-black/10 bg-[#fafaf8] p-4">
+            <div className="mb-5 grid grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="flex flex-col rounded-xl border border-black/10 bg-[#fafaf8] p-3 shadow-sm">
+                    <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-black/50 mb-1.5 font-medium"><BookOpen className="h-3.5 w-3.5 opacity-70" /> Repos</span>
+                    <span className="text-xl font-bold tracking-tight text-black">{stats.repos}</span>
+                </div>
+                <div className="flex flex-col rounded-xl border border-black/10 bg-[#fafaf8] p-3 shadow-sm">
+                    <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-black/50 mb-1.5 font-medium"><Star className="h-3.5 w-3.5 opacity-70" /> Total Stars</span>
+                    <span className="text-xl font-bold tracking-tight text-black">{stats.stars}</span>
+                </div>
+                <div className="flex flex-col rounded-xl border border-black/10 bg-[#fafaf8] p-3 shadow-sm">
+                    <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-black/50 mb-1.5 font-medium"><GitFork className="h-3.5 w-3.5 opacity-70" /> Forks</span>
+                    <span className="text-xl font-bold tracking-tight text-black">{stats.forks}</span>
+                </div>
+                <div className="flex flex-col rounded-xl border border-black/10 bg-[#fafaf8] p-3 shadow-sm">
+                    <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-widest text-black/50 mb-1.5 font-medium"><Users className="h-3.5 w-3.5 opacity-70" /> Followers</span>
+                    <span className="text-xl font-bold tracking-tight text-black">{stats.followers}</span>
+                </div>
+            </div>
+
+            <div className="overflow-x-auto rounded-xl border border-black/10 bg-[#fafaf8] p-4 relative">
+              {/* Optional blurred glowing backdrop if there's real empty space */}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#f4ede3]/80 to-transparent opacity-50 pointer-events-none" />
               <img
                 src={githubHeatmapUrl}
                 alt="GitHub contribution heatmap"
-                className="min-w-[760px]"
+                className="min-w-[760px] relative z-10"
                 loading="lazy"
               />
             </div>
