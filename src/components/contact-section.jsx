@@ -183,7 +183,7 @@ export default function ContactSection() {
                                 required
                                 value={form.name}
                                 onChange={handleChange}
-                                placeholder="Jane Doe"
+                                placeholder="Your Name"
                                 className="rounded-xl border border-black/10 bg-white/70 px-5 py-4 text-base text-black placeholder:text-black/30 outline-none transition-all duration-200 focus:border-black/30 focus:bg-white focus:shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
                             />
                         </div>
@@ -203,7 +203,7 @@ export default function ContactSection() {
                                 required
                                 value={form.email}
                                 onChange={handleChange}
-                                placeholder="jane@example.com"
+                                placeholder="Email"
                                 className="rounded-xl border border-black/10 bg-white/70 px-5 py-4 text-base text-black placeholder:text-black/30 outline-none transition-all duration-200 focus:border-black/30 focus:bg-white focus:shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
                             />
                         </div>
