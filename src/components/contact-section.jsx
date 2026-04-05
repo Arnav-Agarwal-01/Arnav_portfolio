@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ArrowUpRight, MapPin, Send } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Github, Linkedin, Mail, ArrowUpRight, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 const contactLinks = [
     {
@@ -232,11 +232,73 @@ export default function ContactSection() {
                         <div className="md:col-span-2">
                             <button
                                 type="submit"
-                                disabled={status === "loading"}
-                                className="group inline-flex items-center gap-3 rounded-full bg-black px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:bg-black/85 hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none"
+                                disabled={status !== "idle"}
+                                className="group relative inline-flex h-14 min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-black px-8 text-sm font-medium text-white transition-all duration-300 hover:bg-black/85 hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] active:scale-[0.98] disabled:opacity-80 disabled:pointer-events-none"
                             >
-                                {status === "loading" ? "Sending..." : status === "success" ? "Message Sent!" : status === "error" ? "Error, please try again" : "Send Message"}
-                                {status === "idle" && <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />}
+                                <AnimatePresence mode="wait">
+                                    {status === "idle" && (
+                                        <motion.div
+                                            key="idle"
+                                            initial={{ opacity: 0, y: 15 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: -15 }}
+                                            transition={{ duration: 0.2 }}
+                                            className="flex items-center gap-2"
+                                        >
+                                            <span>Send Message</span>
+                                            <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                                        </motion.div>
+                                    )}
+                                    {status === "loading" && (
+                                        <motion.div
+                                            key="loading"
+                                            initial={{ opacity: 0, y: 15 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: -15 }}
+                                            transition={{ duration: 0.2 }}
+                                            className="flex items-center gap-2"
+                                        >
+                                            <span>Sending</span>
+                                            <motion.div 
+                                                animate={{ rotate: 360 }}
+                                                transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+                                                className="h-4 w-4 rounded-full border-2 border-white/30 border-t-white"
+                                            />
+                                        </motion.div>
+                                    )}
+                                    {status === "success" && (
+                                        <motion.div
+                                            key="success"
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.8 }}
+                                            transition={{ duration: 0.2 }}
+                                            className="flex items-center gap-2"
+                                        >
+                                            <span>Sent</span>
+                                            <motion.div
+                                                initial={{ scale: 0 }}
+                                                animate={{ scale: 1 }}
+                                                transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
+                                            >
+                                                <CheckCircle2 className="h-4 w-4" />
+                                            </motion.div>
+                                        </motion.div>
+                                    )}
+                                    {status === "error" && (
+                                        <motion.div
+                                            key="error"
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.8 }}
+                                            transition={{ duration: 0.2 }}
+                                            className="flex items-center gap-2 text-red-300"
+                                        >
+                                            <span>Error!</span>
+                                            <AlertCircle className="h-4 w-4" />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </button>
                         </div>
                     </form>
