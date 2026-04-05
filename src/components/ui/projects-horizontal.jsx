@@ -31,7 +31,7 @@ const projects = [
         description:
             "Built a full-stack blogging platform for creating, publishing, and managing blogs with integrated AI tools for content generation and enhancement. You can write blogs, get them analysed by AI , publish them, view your blogs, view others blogs, edit delete and write them with AI all in one platform.",
         stack: ["React", "Node.js", "Express", "MongoDB", "AI Tools" , "API" , "OPENAI API" , "Gemini"],
-        github: "",
+        github: "https://github.com/blog-genie/BlogGenie-ps-proj-",
         live: "",
     },
     {
@@ -40,7 +40,7 @@ const projects = [
         description:
             "Webby the web scraper. Created for personal use. This web scraper scrapes mutliple sites paralelly and extracts relevant information, cleans and displays them all at a glance and In one single click. This was made to solve a personal problem I was facing.",
         stack: ["Python", "Selenium", "Beautiful Soup", "Web Scraping"],
-        github: "",
+        github: "https://github.com/Arnav-Agarwal-01/Webby",
         live: "",
     },
     {
@@ -48,39 +48,34 @@ const projects = [
         time: "Oct 2023 - Dec 2023",
         description:
             "Developed an internal system to manage organizational assets, allocation flows, and audit visibility across teams.",
-        outcome:
-            "Reduced manual tracking and improved accountability with clearer lifecycle records and role-based workflows.",
-        stack: ["Vue", "Firebase", "Tailwind"],
-        github: "",
+        stack: ["MERN STACK", "MongoDB", "React" , "NodeMailer" , "Express" , "JavaScript"],
+        github: "https://github.com/Arnav-Agarwal-01/AMS-1",
         live: "",
     },
     {
         title: "My Portfolio",
         time: "Sep 2023",
         description:
-            "Designed and built a personal portfolio focused on expressive typography, clean motion, and strong content hierarchy.",
-        outcome:
-            "Used the site as a flexible surface to showcase projects, experience, and front-end taste without clutter.",
-        stack: ["Next.js", "Tailwind", "GSAP"],
-        github: "",
-        live: "",
+            "Designed and built a personal portfolio to showcase my skills and projects. You're currently seeing it here :)",
+        stack: ["Next.js", "Tailwind", "GSAP" , "JavaScript"],
+        github: "https://github.com/Arnav-Agarwal-01/Arnav_portfolio",
+        live: "https://arnavagarwal.me",
     },
     {
         title: "Alertify",
         time: "Sep 2023",
         description:
-            "Built a notification-driven product concept centered on timely updates, lightweight interactions, and a clean interface.",
-        outcome:
-            "Focused on interface clarity and event-driven user flows to keep the experience responsive and simple.",
+            "This is something exciting in progress :) Wont reveal much here but check out for early access :)",
+        
         stack: ["JavaScript", "CSS", "UI Design"],
         github: "",
-        live: "",
+        live: "https://alertify-navy.vercel.app",
     },
     {
         title: "AruCode",
         time: "Sep 2023",
         description:
-            "Created a developer-facing build with a minimal aesthetic and straightforward interaction model.",
+            "In Progress : Replicating claude code , learning about tool calling , agentic infrastructure , llms and low level access. Hoping to release it soon",
         outcome:
             "Prioritized readable structure and fast navigation to keep the product useful rather than ornamental.",
         stack: ["HTML", "SCSS", "JavaScript"],
@@ -91,12 +86,11 @@ const projects = [
         title: "HolidayME",
         time: "Sep 2023",
         description:
-            "Explored a travel-focused experience with streamlined browsing, destination storytelling, and simple booking-oriented journeys.",
-        outcome:
-            "Balanced aspirational visuals with a more structured browsing flow to keep discovery practical.",
-        stack: ["Frontend", "UX", "JavaScript"],
-        github: "",
-        live: "",
+            "Helps you find the best vacation time provided you have limited leaves. Gets you a list of all the possible long weekends you can take off on based on your leaves and your country. Takes into account all the possibilities and gives you the best slots and windows for you to maximise your travel experience. Cached and optimised for a user-friendly and smooth experience.",
+        
+        stack: ["Caching", "System Design", "JavaScript" , "MERN STACK"],
+        github: "https://github.com/Arnav-Agarwal-01/HolidayMe",
+        live: "https://vacamax.arnavagarwal.me",
     },
 ];
 
