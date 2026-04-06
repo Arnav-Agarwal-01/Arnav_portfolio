@@ -15,7 +15,7 @@ export default function RoleTagline() {
     >
       <p className="max-w-full md:max-w-2xl text-black/60 text-base md:text-xl lg:text-2xl font-light tracking-wide md:-translate-y-38 md:translate-x-5">
       <br></br>
-        A developer with interest and experience in Full Stack Developement, Artificial Intelligence and Machine Learning, along with DevOps.<br></br><br></br>
+        A developer with interest and experience in CyberSecurity, Full Stack Developement, Artificial Intelligence, Machine Learning, and DevOps.<br></br><br></br>
         I am from India and love to create systems that scale.<br></br>I have built sites that handled more than 45,000 visitors and also interned at Salesforce previously.
       </p>
     </motion.div>

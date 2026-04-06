@@ -32,7 +32,7 @@ export default function Timeline_02() {
     <section id="experience" className="bg-background py-16 md:py-24">
       <div className="mx-4 md:ml-[4rem] md:mr-8 lg:ml-[6rem]">
         <h1 className="text-foreground mb-8 md:mb-12 text-left text-3xl md:text-4xl font-bold tracking-tight lg:text-5xl">
-          Relevant Experience
+          My Experience
         </h1>
 
         <div className="relative max-w-5xl">
